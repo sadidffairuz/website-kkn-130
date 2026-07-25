@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "date": {
+            "day": "10",
+            "month": "Agustus",
+            "time": "08:00 WIB"
+        },
+        "tags": ["Proker Utama", "Sosialisasi"],
+        "location": "Balai Desa Sulek",
+        "title": "Sosialisasi Program Ketahanan Pangan",
+        "description": "Pemaparan konsep bank bibit dan optimalisasi lahan pekarangan kepada perangkat desa dan perwakilan kelompok tani. Diskusi berjalan lancar dan mendapat respon positif.",
+        "attendance": ["AH", "BD", "ST"],
+        "moreAttendance": 3,
+        "gallery": []
+    },
+    {
+        "id": 2,
+        "date": {
+            "day": "12",
+            "month": "Agustus",
+            "time": "13:00 WIB"
+        },
+        "tags": ["Proker Utama", "Pelatihan"],
+        "location": "Lahan Warga RT 02",
+        "title": "Praktek Pembuatan Pupuk Kompos Cair",
+        "description": "Melakukan demonstrasi langsung pembuatan pupuk organik cair memanfaatkan limbah rumah tangga bersama ibu-ibu PKK.",
+        "attendance": ["SI", "AN"],
+        "moreAttendance": 0,
+        "gallery": ["assets/images/gallery-1.jpg", "assets/images/gallery-2.jpg"]
+    }
+]

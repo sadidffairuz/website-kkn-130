@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Analytics | KKN Berdampak 2026</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Chart.js untuk Grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- CSS Khusus Dashboard (Akan kita buat setelah ini) -->
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+</head>
+<body class="bg-surface">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="logbook.html" class="nav-link">Logbook</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-sm active">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="page-header" style="margin-top: 100px; padding: 40px 0 20px 0;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0; text-align: left;">
+                <h1 class="section-title">Dashboard Analytics</h1>
+                <p class="section-desc">Pantauan real-time progres program kerja dan metrik keberhasilan KKN.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN DASHBOARD CONTENT ================= -->
+    <main class="container" style="padding: 20px 24px 80px 24px;">
+        
+        <!-- Top Stats Cards -->
+        <section class="dashboard-stats reveal-fade-up">
+            <div class="stat-card glass-panel">
+                <div class="stat-icon" style="background-color: #E0F2FE; color: #0284C7;">
+                    <i data-lucide="target"></i>
+                </div>
+                <div class="stat-info">
+                    <p class="stat-label">Progres Keseluruhan</p>
+                    <h3 class="stat-value">68%</h3>
+                    <span class="stat-trend positive"><i data-lucide="trending-up"></i> +12% minggu ini</span>
+                </div>
+            </div>
+
+            <div class="stat-card glass-panel">
+                <div class="stat-icon" style="background-color: #DCFCE7; color: #16A34A;">
+                    <i data-lucide="users"></i>
+                </div>
+                <div class="stat-info">
+                    <p class="stat-label">Warga Terlibat</p>
+                    <h3 class="stat-value">124</h3>
+                    <span class="stat-trend positive"><i data-lucide="trending-up"></i> +15 orang</span>
+                </div>
+            </div>
+
+            <div class="stat-card glass-panel">
+                <div class="stat-icon" style="background-color: #FEF9C3; color: #CA8A04;">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div class="stat-info">
+                    <p class="stat-label">Jam Pengabdian</p>
+                    <h3 class="stat-value">340</h3>
+                    <span class="stat-trend neutral">Total jam kumulatif</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Grid -->
+        <section class="dashboard-charts reveal-fade-up" style="transition-delay: 0.1s;">
+            <!-- Bar Chart: Progres per Program -->
+            <div class="chart-card glass-panel">
+                <div class="chart-header">
+                    <h3 class="chart-title">Progres per Program Kerja</h3>
+                    <button class="btn-icon"><i data-lucide="more-horizontal"></i></button>
+                </div>
+                <div class="chart-body">
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Doughnut Chart: Sebaran Kategori -->
+            <div class="chart-card glass-panel">
+                <div class="chart-header">
+                    <h3 class="chart-title">Sebaran Kategori Kegiatan</h3>
+                    <button class="btn-icon"><i data-lucide="more-horizontal"></i></button>
+                </div>
+                <div class="chart-body">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 KKN Berdampak Kelompok 130. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <!-- Script Khusus Dashboard (Nanti kita buat) -->
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

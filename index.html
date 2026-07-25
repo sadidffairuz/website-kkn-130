@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard Dokumentasi KKN Berdampak 2026 - Mewujudkan Ketahanan Pangan Berbasis Potensi Lokal">
+    <title>KKN Berdampak 2026 | Ketahanan Pangan</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet -->
+    <!-- Main Stylesheet (Panggil satu-satu agar aman di file lokal) -->
+<link rel="stylesheet" href="css/variable.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <img src="assets/logos/logo-kkn.png" alt="Logo KKN 2026" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="pages/village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="pages/program.html" class="nav-link">Program</a></li>
+                <li><a href="pages/program.html" class="nav-link">Logbook</a></li>
+                <li><a href="pages/gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="pages/team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="pages/dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-badge reveal-fade-up">
+                <i data-lucide="leaf"></i>
+                <span>Fokus Ketahanan Pangan</span>
+            </div>
+            <h1 class="hero-title reveal-fade-up">KKN Berdampak 2026</h1>
+            <p class="hero-subtitle reveal-fade-up">Mewujudkan Ketahanan Pangan Berbasis Potensi Lokal</p>
+            
+            <div class="hero-buttons reveal-fade-up">
+                <a href="#programs" class="btn btn-primary btn-lg">Jelajahi Program</a>
+                <a href="pages/logbook.html" class="btn btn-glass btn-lg">Lihat Logbook</a>
+            </div>
+        </div>
+
+        <a href="#statistics" class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <i data-lucide="chevron-down" class="scroll-icon"></i>
+        </a>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+        <!-- STATISTIK SECTION -->
+        <section class="section statistics" id="statistics">
+            <div class="container statistics-grid">
+                <!-- Stat Card 1 -->
+                <div class="stat-card reveal-fade-up">
+                    <div class="stat-icon-wrapper"><i data-lucide="users"></i></div>
+                    <h3 class="stat-number" data-target="29">0</h3>
+                    <p class="stat-label">Jumlah Anggota</p>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="stat-card reveal-fade-up" style="transition-delay: 100ms;">
+                    <div class="stat-icon-wrapper"><i data-lucide="briefcase"></i></div>
+                    <h3 class="stat-number" data-target="12">0</h3>
+                    <p class="stat-label">Jumlah Program</p>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="stat-card reveal-fade-up" style="transition-delay: 200ms;">
+                    <div class="stat-icon-wrapper"><i data-lucide="calendar-days"></i></div>
+                    <h3 class="stat-number" data-target="30">0</h3>
+                    <p class="stat-label">Hari Pelaksanaan</p>
+                </div>
+                <!-- Stat Card 4 -->
+                <div class="stat-card reveal-fade-up" style="transition-delay: 300ms;">
+                    <div class="stat-icon-wrapper"><i data-lucide="check-circle-2"></i></div>
+                    <h3 class="stat-number" data-target="86">0</h3>
+                    <p class="stat-label">Total Kegiatan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAM UNGGULAN SECTION -->
+        <section class="section programs bg-surface" id="programs">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <h2 class="section-title">Program Unggulan</h2>
+                    <p class="section-desc">Inisiatif strategis kami dalam mendorong ketahanan pangan desa.</p>
+                </div>
+
+                <div class="programs-grid">
+                    <!-- Program Card 1 -->
+                    <div class="program-card reveal-fade-up">
+                        <div class="program-image">
+                            <img src="assets/images/program-1.webp" alt="Hidroponik Desa">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Instalasi Hidroponik Komunal</h3>
+                            <p class="program-desc">Pembangunan sistem hidroponik untuk sayuran bernilai ekonomi tinggi di lahan sempit.</p>
+                            
+                            <div class="program-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-percentage">80%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="80%"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="pages/program.html" class="btn btn-outline btn-full">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 2 -->
+                    <div class="program-card reveal-fade-up" style="transition-delay: 100ms;">
+                        <div class="program-image">
+                            <img src="assets/images/program-2.jpg" alt="Pupuk Kompos">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Pelatihan Pupuk Kompos</h3>
+                            <p class="program-desc">Edukasi pembuatan pupuk organik memanfaatkan limbah pertanian setempat.</p>
+                            
+                            <div class="program-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-percentage">100%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="100%"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="pages/program.html" class="btn btn-outline btn-full">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 3 -->
+                    <div class="program-card reveal-fade-up" style="transition-delay: 200ms;">
+                        <div class="program-image">
+                            <img src="assets/images/program-3.jpg" alt="Bank Bibit">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Inisiasi Bank Bibit Desa</h3>
+                            <p class="program-desc">Pusat pelestarian dan distribusi bibit tanaman pangan lokal berkualitas.</p>
+                            
+                            <div class="program-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-percentage">45%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="45%"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="pages/program.html" class="btn btn-outline btn-full">Lihat Detail</a>
+                        </div>
+                    </div>
+
+                    <!-- Program Card 4 -->
+                    <div class="program-card reveal-fade-up" style="transition-delay: 300ms;">
+                        <div class="program-image">
+                            <img src="assets/images/program-4.jpg" alt="Digitalisasi UMKM">
+                        </div>
+                        <div class="program-content">
+                            <h3 class="program-title">Digitalisasi UMKM Pangan</h3>
+                            <p class="program-desc">Pendampingan branding dan pemasaran digital produk olahan pangan desa.</p>
+                            
+                            <div class="program-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-percentage">20%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="20%"></div>
+                                </div>
+                            </div>
+                            
+                            <a href="pages/program.html" class="btn btn-outline btn-full">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE SECTION -->
+        <section class="section timeline-section" id="timeline">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <h2 class="section-title">Preview Timeline</h2>
+                    <p class="section-desc">Jejak langkah dan aktivitas harian kami di desa.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item reveal-fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">10 Agustus 2026</span>
+                            <span class="timeline-category tag-primary">Proker Utama</span>
+                            <h4 class="timeline-title">Sosialisasi Ketahanan Pangan</h4>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item reveal-fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">12 Agustus 2026</span>
+                            <span class="timeline-category tag-secondary">Pelatihan</span>
+                            <h4 class="timeline-title">Praktek Pembuatan Kompos Cair</h4>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item reveal-fade-up">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">15 Agustus 2026</span>
+                            <span class="timeline-category tag-primary">Proker Utama</span>
+                            <h4 class="timeline-title">Perakitan Sistem Hidroponik</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-action reveal-fade-up">
+                    <a href="pages/logbook.html" class="btn btn-primary">Lihat Seluruh Logbook <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section class="section gallery-section bg-surface" id="gallery">
+            <div class="container">
+                <div class="section-header reveal-fade-up">
+                    <h2 class="section-title">Gallery Preview</h2>
+                    <p class="section-desc">Dokumentasi visual perjalanan dan dedikasi kami.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <a href="assets/images/gallery-1.webp" class="gallery-item reveal-fade-up">
+                        <img src="assets/images/gallery-1.webp" alt="Kegiatan Bersama Warga">
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 2 -->
+                    <a href="assets/images/gallery-2.webp" class="gallery-item reveal-fade-up" style="transition-delay: 100ms;">
+                        <img src="assets/images/gallery-2.webp" alt="Survei Lahan">
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 3 -->
+                    <a href="assets/images/gallery-3.webp" class="gallery-item reveal-fade-up" style="transition-delay: 200ms;">
+                        <img src="assets/images/gallery-3.webp" alt="Pelatihan UMKM">
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 4 -->
+                    <a href="assets/images/gallery-4.jpg" class="gallery-item reveal-fade-up" style="transition-delay: 300ms;">
+                        <img src="assets/images/gallery-4.jpg" alt="Panen Bersama">
+                        <div class="gallery-overlay">
+                            <i data-lucide="maximize-2"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="section cta-section" id="cta">
+            <div class="container">
+                <div class="cta-card reveal-fade-up">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Mari Bertumbuh Bersama</h2>
+                        <p class="cta-desc">Dukung dan pantau terus perkembangan program pemberdayaan masyarakat kami menuju ketahanan pangan yang berkelanjutan.</p>
+                        <a href="pages/documents.html" class="btn btn-primary btn-lg">Jelajahi Luaran Proyek</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Kontak</h4>
+                <ul>
+                    <li><a href="mailto:kknberdampak2026@umm.ac.id"><i data-lucide="mail"></i> kknberdampak@umm.ac.id</a></li>
+                    <li><a href="https://instagram.com/kknberdampak" target="_blank"><i data-lucide="instagram"></i> @kknberdampak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 KKN Berdampak Kelompok 130. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Kerja | KKN Berdampak 2026</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- CSS Khusus Program -->
+    <link rel="stylesheet" href="../css/pages/program.css">
+</head>
+<body class="bg-surface">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="logbook.html" class="nav-link">Logbook</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="page-header" style="margin-top: 100px; padding: 60px 0; background-color: var(--color-background);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0;">
+                <h1 class="section-title">Program Kerja Unggulan</h1>
+                <p class="section-desc">Fokus pengabdian kami untuk menciptakan desa mandiri pangan yang berkelanjutan.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container" style="padding: 40px 24px 80px 24px;">
+        
+        <div class="program-grid-detail">
+            
+            <!-- Program 1 -->
+            <article class="program-card-large reveal-fade-up">
+                <div class="program-img-wrapper">
+                    <!-- Pastikan nama gambar sesuai dengan yang ada di folder assets Anda -->
+                    <img src="../assets/images/program-1.jpg" alt="Bank Bibit">
+                    <div class="program-badge">Proker Utama</div>
+                </div>
+                <div class="program-info">
+                    <h2>Bank Bibit Desa</h2>
+                    <p class="program-summary">Penyediaan dan pengelolaan bibit tanaman produktif terpusat untuk disalurkan kepada warga desa secara berkala.</p>
+                    
+                    <ul class="program-targets">
+                        <li><i data-lucide="check-circle-2"></i> Pengadaan 1000 bibit cabai dan tomat</li>
+                        <li><i data-lucide="check-circle-2"></i> Pembentukan sistem barter bibit antar RT</li>
+                        <li><i data-lucide="check-circle-2"></i> Edukasi penyemaian mandiri</li>
+                    </ul>
+
+                    <div class="program-status">
+                        <span class="status-label">Status Progres: 85%</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Program 2 -->
+            <article class="program-card-large reveal-fade-up">
+                <div class="program-img-wrapper">
+                    <img src="../assets/images/program-2.jpg" alt="Pupuk Kompos">
+                    <div class="program-badge">Proker Utama</div>
+                </div>
+                <div class="program-info">
+                    <h2>Pengolahan Pupuk Kompos</h2>
+                    <p class="program-summary">Memanfaatkan limbah organik rumah tangga dan kotoran ternak menjadi pupuk kompos cair dan padat yang bernilai tinggi.</p>
+                    
+                    <ul class="program-targets">
+                        <li><i data-lucide="check-circle-2"></i> Sosialisasi pemilahan sampah organik</li>
+                        <li><i data-lucide="check-circle-2"></i> Pembuatan 5 tong komposter percontohan</li>
+                        <li><i data-lucide="check-circle-2"></i> Pelatihan panen pupuk cair (POC)</li>
+                    </ul>
+
+                    <div class="program-status">
+                        <span class="status-label">Status Progres: 60%</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Kontak</h4>
+                <ul>
+                    <li><a href="mailto:kknberdampak2026@umm.ac.id"><i data-lucide="mail"></i> kknberdampak@umm.ac.id</a></li>
+                    <li><a href="https://instagram.com/kknberdampak" target="_blank"><i data-lucide="instagram"></i> @kknberdampak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 KKN Berdampak Kelompok 130. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+</body>
+</html>

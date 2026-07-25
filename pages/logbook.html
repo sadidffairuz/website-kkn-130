@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logbook Kegiatan | KKN Berdampak 2026</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet (Perhatikan penggunaan ../ karena file ini di dalam folder pages) -->
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- Nanti kita akan buat css khusus untuk halaman logbook -->
+    <link rel="stylesheet" href="../css/pages/logbook.css">
+</head>
+<body class="bg-surface">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN 2026" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="logbook.html" class="nav-link">Logbook</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="page-header" style="margin-top: 100px; padding: 60px 0; background-color: var(--color-background);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0;">
+                <h1 class="section-title">Logbook Kegiatan</h1>
+                <p class="section-desc">Rekam jejak aktivitas harian, progres program kerja, dan dokumentasi lapangan.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="container" style="padding: 40px 24px;">
+        
+        <!-- FILTER SECTION -->
+        <section class="filter-section reveal-fade-up">
+            <div class="filter-card glass-panel">
+                <div class="filter-group">
+                    <label for="filter-minggu"><i data-lucide="calendar"></i> Minggu</label>
+                    <select id="filter-minggu" class="filter-select">
+                        <option value="all">Semua Minggu</option>
+                        <option value="minggu-1">Minggu 1</option>
+                        <option value="minggu-2">Minggu 2</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="filter-kategori"><i data-lucide="tag"></i> Kategori</label>
+                    <select id="filter-kategori" class="filter-select">
+                        <option value="all">Semua Kategori</option>
+                        <option value="utama">Proker Utama</option>
+                        <option value="pendukung">Proker Pendukung</option>
+                        <option value="sosialisasi">Sosialisasi</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary"><i data-lucide="filter"></i> Terapkan Filter</button>
+            </div>
+        </section>
+
+        <!-- TIMELINE VERTICAL SECTION -->
+        <section class="logbook-timeline">
+            
+            <!-- Tanggal Divider -->
+            <div class="timeline-date-divider reveal-fade-up">
+                <span>Minggu 1 - Agustus 2026</span>
+            </div>
+
+            <!-- KUNCI UTAMANYA ADA DI BARIS BAWAH INI -->
+            <!-- JavaScript akan mencari ID ini untuk memasukkan data JSON -->
+            <div id="logbook-container"></div>
+
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Kontak</h4>
+                <ul>
+                    <li><a href="mailto:kknberdampak130@umm.ac.id"><i data-lucide="mail"></i> kknberdampak@umm.ac.id</a></li>
+                    <li><a href="https://instagram.com/kknberdampak" target="_blank"><i data-lucide="instagram"></i> @kknberdampak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 KKN Berdampak Kelompok 130. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/logbook.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Sosialisasi Bank Bibit",
+        "date": "10 Agustus 2026",
+        "category": "Proker Utama",
+        "image": "../assets/images/gallery-1.webp"
+    },
+    {
+        "id": 2,
+        "title": "Kerja Bakti Balai Desa",
+        "date": "15 Agustus 2026",
+        "category": "Kegiatan Warga",
+        "image": "../assets/images/gallery-2.webp"
+    },
+    {
+        "id": 3,
+        "title": "Pelatihan Pupuk Kompos",
+        "date": "18 Agustus 2026",
+        "category": "Proker Utama",
+        "image": "../assets/images/gallery-3.webp"
+    },
+    {
+        "id": 4,
+        "title": "Mengajar di SD Negeri 1",
+        "date": "22 Agustus 2026",
+        "category": "Lainnya",
+        "image": "../assets/images/gallery-4.jpg"
+    }
+]

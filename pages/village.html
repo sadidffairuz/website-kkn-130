@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Desa | KKN Berdampak 2026</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- CSS Khusus Desa -->
+    <link rel="stylesheet" href="../css/pages/village.css">
+</head>
+<body class="bg-surface">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="logbook.html" class="nav-link">Logbook</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= VILLAGE HERO ================= -->
+    <header class="village-hero">
+        <div class="village-hero-overlay"></div>
+        <div class="container village-hero-content reveal-fade-up">
+            <div class="badge-location"><i data-lucide="map-pin"></i> Kecamatan Tlogosari, Situbondo</div>
+            <h1 class="village-title">Desa Sulek</h1>
+            <p class="village-subtitle">Bumi agraris dengan sejuta potensi alam dan kearifan lokal yang terus dijaga kelestariannya dari generasi ke generasi.</p>
+        </div>
+    </header>
+
+    <!-- ================= VILLAGE INFO SECTION ================= -->
+    <main class="container" style="padding: 60px 24px 80px 24px;">
+        
+        <div class="village-grid">
+            <!-- Kolom Kiri: Teks -->
+            <div class="village-about reveal-fade-up">
+                <h2>Sejarah Singkat</h2>
+                <p>Desa Sulek merupakan salah satu desa yang terletak di lereng pegunungan Argopuro. Mayoritas penduduknya bermatapencaharian sebagai petani dan peternak. Desa ini dikaruniai tanah yang sangat subur sehingga cocok untuk pengembangan berbagai komoditas pertanian unggulan.</p>
+                <p>Melalui program KKN ini, kami berupaya memaksimalkan potensi tersebut untuk menciptakan desa yang mandiri secara pangan dan ekonomi.</p>
+                
+                <div class="village-stats">
+                    <div class="v-stat-item">
+                        <span class="v-stat-value">3.245</span>
+                        <span class="v-stat-label">Total Penduduk</span>
+                    </div>
+                    <div class="v-stat-item">
+                        <span class="v-stat-value">4</span>
+                        <span class="v-stat-label">Dusun</span>
+                    </div>
+                    <div class="v-stat-item">
+                        <span class="v-stat-value">120 Ha</span>
+                        <span class="v-stat-label">Luas Lahan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Potensi Cards -->
+            <div class="village-potentials reveal-fade-up" style="transition-delay: 0.1s;">
+                <div class="potential-card glass-panel">
+                    <div class="p-icon"><i data-lucide="wheat"></i></div>
+                    <div>
+                        <h3>Pertanian</h3>
+                        <p>Penghasil utama komoditas padi, jagung, dan cabai dengan sistem pengairan semi-teknis.</p>
+                    </div>
+                </div>
+
+                <div class="potential-card glass-panel">
+                    <div class="p-icon"><i data-lucide="store"></i></div>
+                    <div>
+                        <h3>UMKM Lokal</h3>
+                        <p>Terdapat kelompok pengrajin anyaman bambu dan produksi keripik singkong skala rumah tangga.</p>
+                    </div>
+                </div>
+
+                <div class="potential-card glass-panel">
+                    <div class="p-icon"><i data-lucide="trees"></i></div>
+                    <div>
+                        <h3>Wisata Alam</h3>
+                        <p>Memiliki potensi ekowisata berupa air terjun tersembunyi dan jalur pendakian ringan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <!-- Main JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+</body>
+</html>

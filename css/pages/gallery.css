@@ -1,0 +1,131 @@
+/* css/pages/gallery.css */
+
+/* =========================================
+   Filter Buttons
+========================================= */
+.gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 8px 20px;
+    border-radius: var(--radius-pill);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+    background: #F3F4F6;
+    color: var(--color-text);
+}
+
+.filter-btn.active {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+   Gallery Grid
+========================================= */
+.gallery-grid-container {
+    display: grid;
+    /* Otomatis membuat kolom dengan lebar minimal 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 3; /* Memastikan semua foto punya rasio yang seragam */
+    background-color: #E5E7EB; /* Warna dasar jika foto belum termuat */
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efek zoom perlahan pada foto saat di-hover */
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   Overlay Teks Interaktif
+========================================= */
+.gallery-overlay-card {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0; /* Disembunyikan secara default */
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .gallery-overlay-card {
+    opacity: 1; /* Munculkan saat di-hover */
+}
+
+.gallery-date {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8125rem;
+    margin-bottom: 4px;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.gallery-title {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+    transition-delay: 0.05s; /* Sedikit delay agar animasinya berurutan */
+}
+
+/* Animasi teks naik saat di-hover */
+.gallery-card:hover .gallery-date,
+.gallery-card:hover .gallery-title {
+    transform: translateY(0);
+}
+
+/* =========================================
+   Responsive Adjustments (Mobile)
+========================================= */
+@media (max-width: 576px) {
+    .gallery-grid-container {
+        grid-template-columns: 1fr; /* 1 kolom penuh di layar HP */
+    }
+    
+    .gallery-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        flex-wrap: nowrap; /* Biarkan tombol bisa di-scroll ke samping di HP */
+    }
+    
+    /* Sembunyikan scrollbar pada filter di HP agar lebih rapi */
+    .gallery-filters::-webkit-scrollbar {
+        display: none;
+    }
+}

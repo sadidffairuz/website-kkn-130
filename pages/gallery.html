@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kegiatan | KKN Berdampak 2026</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/variable.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/animation.css">
+    <!-- CSS Khusus Galeri -->
+    <link rel="stylesheet" href="../css/pages/gallery.css">
+</head>
+<body class="bg-surface">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container navbar-container">
+            <a href="../index.html" class="navbar-logo">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="logo-img">
+                <span class="logo-text">KKN Berdampak</span>
+            </a>
+            
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="nav-link">Beranda</a></li>
+                <li><a href="village.html" class="nav-link">Profil Desa</a></li> <!-- Tambahan Baru -->
+                <li><a href="program.html" class="nav-link">Program</a></li>
+                <li><a href="logbook.html" class="nav-link">Logbook</a></li>
+                <li><a href="gallery.html" class="nav-link">Galeri</a></li>
+                <li><a href="team.html" class="nav-link">Tim Kami</a></li> <!-- Tambahan Baru -->
+            </ul>
+
+            <div class="navbar-actions">
+                <a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= PAGE HEADER ================= -->
+    <header class="page-header" style="margin-top: 100px; padding: 60px 0 20px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">Dokumentasi Visual</h1>
+                <p class="section-desc">Momen-momen berharga selama masa pengabdian kami di desa.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT (GALLERY) ================= -->
+    <main class="container" style="padding: 20px 24px 80px 24px;">
+        
+        <!-- Filter Kategori -->
+        <div class="gallery-filters reveal-fade-up">
+            <button class="filter-btn active">Semua</button>
+            <button class="filter-btn">Proker Utama</button>
+            <button class="filter-btn">Kegiatan Warga</button>
+            <button class="filter-btn">Lainnya</button>
+        </div>
+
+        <!-- Grid Foto -->
+        <!-- Grid Foto -->
+        <div id="gallery-container" class="gallery-grid-container" style="transition-delay: 0.1s;">
+            <!-- Foto-foto akan dirender otomatis oleh JavaScript di sini -->
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="../assets/logos/logo-kkn.png" alt="Logo KKN" class="footer-logo">
+                <p class="footer-text">Membangun desa mandiri melalui ketahanan pangan dan pemberdayaan potensi lokal.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4 class="footer-heading">Kontak</h4>
+                <ul>
+                    <li><a href="mailto:kknberdampak2026@umm.ac.id"><i data-lucide="mail"></i> kknberdampak@umm.ac.id</a></li>
+                    <li><a href="https://instagram.com/kknberdampak" target="_blank"><i data-lucide="instagram"></i> @kknberdampak</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 KKN Berdampak Kelompok 130. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- Main JavaScript -->
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
