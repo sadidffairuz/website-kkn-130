@@ -144,3 +144,61 @@
     .navbar-menu { display: none; } /* Akan dibuat menu mobile via JS nanti */
     .footer-container { grid-template-columns: 1fr; gap: 32px; }
 }
+
+/* Tombol Hamburger (Disembunyikan di Laptop/PC) */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobile-menu-btn i {
+    width: 28px;
+    height: 28px;
+}
+
+/* =========================================
+   Mode HP (Mobile Responsive)
+========================================= */
+@media (max-width: 992px) {
+    /* Munculkan tombol hamburger */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: auto; /* Dorong ke kanan */
+    }
+
+    /* Sembunyikan tombol dashboard agar header tidak sempit */
+    .navbar-actions {
+        display: none;
+    }
+
+    /* Ubah susunan menu menjadi ke bawah dan sembunyikan sementara */
+    .navbar-menu {
+        position: absolute;
+        top: 100%; /* Turun ke bawah navbar */
+        left: 0;
+        right: 0;
+        background-color: var(--color-surface);
+        flex-direction: column; /* Susun ke bawah */
+        padding: 24px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        gap: 20px;
+        
+        /* Sembunyikan default-nya */
+        display: none; 
+    }
+
+    /* Class ini akan ditambahkan oleh JavaScript saat tombol diklik */
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        display: block;
+        text-align: center;
+    }
+}
