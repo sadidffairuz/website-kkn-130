@@ -1,47 +1,104 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const logbookContainer = document.getElementById('logbook-container'); // Pastikan ID ini ada di HTML Anda
-    const btnFilter = document.getElementById('btn-apply-filter'); // Pastikan ID tombol filter sesuai di HTML
-    let allData = [];
+// js/logbook.js
 
+document.addEventListener('DOMContentLoaded', () => {
+    const logbookContainer = document.getElementById('logbook-container');
+    if (!logbookContainer) return;
+
+    let allLogs = []; // Tempat menyimpan data asli dari JSON
+
+    // 1. Ambil data dari JSON
     fetch('../data/logbook.json')
         .then(response => response.json())
         .then(data => {
-            allData = data;
-            renderLogbook(allData); 
+            allLogs = data;
+            renderLogbook(allLogs); // Render semua data saat pertama buka
         })
-        .catch(error => console.error("Gagal memuat data logbook:", error));
+        .catch(error => console.error('Error fetching logbook data:', error));
 
-    function renderLogbook(dataToRender) {
-        if (!logbookContainer) return; 
-        logbookContainer.innerHTML = '';
+    // 2. Fungsi Utama Render Kartu (Sesuai Desain Asli Kamu)
+    function renderLogbook(logs) {
+        logbookContainer.innerHTML = ''; // Bersihkan kontainer
 
-        if (dataToRender.length === 0) {
-            logbookContainer.innerHTML = '<p style="text-align:center; padding: 20px;">Tidak ada kegiatan untuk filter ini.</p>';
+        if (logs.length === 0) {
+            logbookContainer.innerHTML = '<p style="text-align:center; padding: 40px; color: #666;">Tidak ada catatan kegiatan untuk kategori ini.</p>';
             return;
         }
 
-        dataToRender.forEach(item => {
-            const tagsHTML = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-            
-            const cardHTML = `
-                <div class="logbook-card" style="margin-bottom: 24px; padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #fff;">
-                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <div class="tags">${tagsHTML}</div>
-                        <div class="location" style="color: #666; font-size: 0.9rem;">📍 ${item.location}</div>
+        logs.forEach((log) => {
+            // Logika Mini Gallery
+            let galleryHTML = '';
+            if (log.gallery && log.gallery.length > 0) {
+                const images = log.gallery.map(img => `<img src="${img}" alt="Dokumentasi">`).join('');
+                galleryHTML = `<div class="mini-gallery">${images}</div>`;
+            }
+
+            // Logika Tags (Primary & Secondary)
+            const tagsHTML = log.tags ? log.tags.map((tag, i) =>
+                `<span class="${i === 0 ? 'tag-primary' : 'tag-secondary'}">${tag}</span>`
+            ).join('') : '';
+
+            // Logika Avatars (Peserta)
+            const avatarsHTML = log.attendance ? log.attendance.map(name =>
+                `<div class="avatar" title="${name}">${name}</div>`
+            ).join('') : '';
+
+            const moreAvatar = log.moreAttendance > 0 ? `<div class="avatar-more">+${log.moreAttendance}</div>` : '';
+
+            // Rakit HTML Asli (Lengkap dengan Garis & Tanggal)
+            const logHTML = `
+                <div class="logbook-item reveal-fade-up active">
+                    <div class="logbook-time">
+                        <div class="date-badge">
+                            <span class="day">${log.date.day}</span>
+                            <span class="month">${log.date.month}</span>
+                            <span class="time">${log.date.time}</span>
+                        </div>
+                        <div class="timeline-line">
+                            <div class="timeline-dot"></div>
+                        </div>
                     </div>
                     
-                    <h3 style="margin-bottom: 12px; color: #2c3e50;">${item.title}</h3>
-                    <p style="color: #555; margin-bottom: 16px; line-height: 1.5;">${item.description}</p>
-                    
-                    <div class="card-footer">
-                        <a href="detail-logbook.html?id=${log.id}" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-block;">Lihat Selengkapnya</a>
+                    <div class="logbook-card">
+                        <div class="card-header">
+                            <div class="card-tags">
+                                ${tagsHTML}
+                            </div>
+                            <div class="card-location">
+                                <i data-lucide="map-pin"></i>
+                                <span>${log.location}</span>
+                            </div>
+                        </div>
+
+                        <h3 class="card-title">${log.title}</h3>
+                        <p class="card-description">${log.description}</p>
+                        
+                        ${galleryHTML}
+
+                        <div class="card-footer">
+                            <div class="attendance-list">
+                                <span class="attendance-label">Hadir:</span>
+                                <div class="avatar-group">
+                                    ${avatarsHTML}
+                                    ${moreAvatar}
+                                </div>
+                            </div>
+                            <!-- LINK DETAIL (SUDAH DIPERBAIKI) -->
+                            <a href="detail-logbook.html?id=${log.id}" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-block;">Lihat Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
             `;
-            logbookContainer.insertAdjacentHTML('beforeend', cardHTML);
+
+            logbookContainer.innerHTML += logHTML;
         });
+
+        // Re-inisialisasi ikon Lucide
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
     }
 
+    // 3. Logika Filter Kategori
     const btnFilter = document.getElementById('btn-apply-filter');
     if (btnFilter) {
         btnFilter.addEventListener('click', () => {
@@ -49,17 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!dropdown) return;
 
             const kategoriPilihan = dropdown.value;
-            
-            fetch('../data/logbook.json')
-                .then(response => response.json())
-                .then(data => {
-                    if (kategoriPilihan === "Semua" || kategoriPilihan === "Semua Kategori") {
-                        renderLogbook(data);
-                    } else {
-                        const filteredData = data.filter(log => log.tags.includes(kategoriPilihan));
-                        renderLogbook(filteredData);
-                    }
-                });
+
+            if (kategoriPilihan === "Semua" || kategoriPilihan === "Semua Kategori") {
+                renderLogbook(allLogs);
+            } else {
+                const filtered = allLogs.filter(log => log.tags && log.tags.includes(kategoriPilihan));
+                renderLogbook(filtered);
+            }
         });
     }
 });
