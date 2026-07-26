@@ -1,78 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const logbookContainer = document.getElementById('logbook-container');
-    if (!logbookContainer) return;
+    const logbookContainer = document.getElementById('logbook-container'); // Pastikan ID ini ada di HTML Anda
+    const btnFilter = document.getElementById('btn-apply-filter'); // Pastikan ID tombol filter sesuai di HTML
+    let allData = [];
 
     fetch('../data/logbook.json')
         .then(response => response.json())
         .then(data => {
-            renderLogbook(data);
+            allData = data;
+            renderLogbook(allData); 
         })
-        .catch(error => console.error('Error fetching logbook data:', error));
+        .catch(error => console.error("Gagal memuat data logbook:", error));
 
-    function renderLogbook(logs) {
-        logbookContainer.innerHTML = ''; 
+    function renderLogbook(dataToRender) {
+        if (!logbookContainer) return; 
+        logbookContainer.innerHTML = '';
 
-        logs.forEach((log, index) => {
-            let galleryHTML = '';
-            if (log.gallery.length > 0) {
-                const images = log.gallery.map(img => `<img src="${img}" alt="Dokumentasi">`).join('');
-                galleryHTML = `<div class="mini-gallery">${images}</div>`;
-            }
+        if (dataToRender.length === 0) {
+            logbookContainer.innerHTML = '<p style="text-align:center; padding: 20px;">Tidak ada kegiatan untuk filter ini.</p>';
+            return;
+        }
 
-            const tagsHTML = log.tags.map((tag, i) => 
-                `<span class="${i === 0 ? 'tag-primary' : 'tag-secondary'}">${tag}</span>`
-            ).join('');
-
-            const avatarsHTML = log.attendance.map(name => 
-                `<div class="avatar" title="${name}">${name}</div>`
-            ).join('');
+        dataToRender.forEach(item => {
+            const tagsHTML = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
             
-            const moreAvatar = log.moreAttendance > 0 ? `<div class="avatar-more">+${log.moreAttendance}</div>` : '';
-
-            const logHTML = `
-                <div class="logbook-item reveal-fade-up active">
-                    <div class="logbook-time">
-                        <span class="day">${log.date.day}</span>
-                        <span class="month">${log.date.month}</span>
-                        <span class="hour">${log.date.time}</span>
+            const cardHTML = `
+                <div class="logbook-card" style="margin-bottom: 24px; padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #fff;">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <div class="tags">${tagsHTML}</div>
+                        <div class="location" style="color: #666; font-size: 0.9rem;">📍 ${item.location}</div>
                     </div>
-
-                    <div class="logbook-indicator">
-                        <div class="dot"></div>
-                        <div class="line"></div>
-                    </div>
-
-                    <div class="logbook-content-card">
-                        <div class="card-header">
-                            <div class="tags">${tagsHTML}</div>
-                            <div class="location"><i data-lucide="map-pin"></i> ${log.location}</div>
-                        </div>
-                        
-                        <h3 class="logbook-title">${log.title}</h3>
-                        <p class="logbook-desc">${log.description}</p>
-                        
-                        <div class="attendance">
-                            <span class="attendance-label">Hadir:</span>
-                            <div class="avatar-group">
-                                ${avatarsHTML}
-                                ${moreAvatar}
-                            </div>
-                        </div>
-
-                        ${galleryHTML}
-
-                        <div class="card-footer">
-                            <a href="detail-logbook.html?id=${item.id}" class="btn btn-outline btn-sm" style="text-decoration: none; text-align: center; display: inline-block;">Lihat Selengkapnya</a>
-                        </div>
+                    
+                    <h3 style="margin-bottom: 12px; color: #2c3e50;">${item.title}</h3>
+                    <p style="color: #555; margin-bottom: 16px; line-height: 1.5;">${item.description}</p>
+                    
+                    <div class="card-footer">
+                        <!-- INI TOMBOL YANG SUDAH DIPERBAIKI -->
+                        <a href="detail-logbook.html?id=${item.id}" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-block;">Lihat Selengkapnya</a>
                     </div>
                 </div>
             `;
-
-            logbookContainer.innerHTML += logHTML;
+            logbookContainer.insertAdjacentHTML('beforeend', cardHTML);
         });
+    }
 
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+    if (btnFilter) {
+        btnFilter.addEventListener('click', () => {
+            const kategoriPilihan = document.getElementById('filter-kategori').value; 
+            
+            if (kategoriPilihan === "Semua" || kategoriPilihan === "Semua Kategori") {
+                renderLogbook(allData);
+            } else {
+                const filteredData = allData.filter(item => item.tags.includes(kategoriPilihan));
+                renderLogbook(filteredData);
+            }
+        });
     }
 });
