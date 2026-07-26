@@ -1,32 +1,74 @@
 [
-    {
-        "id": 1,
-        "date": {
-            "day": "10",
-            "month": "Agustus",
-            "time": "08:00 WIB"
-        },
-        "tags": ["Proker Utama", "Sosialisasi"],
-        "location": "Balai Desa Sulek",
-        "title": "Sosialisasi Program Ketahanan Pangan",
-        "description": "Pemaparan konsep bank bibit dan optimalisasi lahan pekarangan kepada perangkat desa dan perwakilan kelompok tani. Diskusi berjalan lancar dan mendapat respon positif.",
-        "attendance": ["AH", "BD", "ST"],
-        "moreAttendance": 3,
-        "gallery": []
-    },
-    {
-        "id": 2,
-        "date": {
-            "day": "12",
-            "month": "Agustus",
-            "time": "13:00 WIB"
-        },
-        "tags": ["Proker Utama", "Pelatihan"],
-        "location": "Lahan Warga RT 02",
-        "title": "Praktek Pembuatan Pupuk Kompos Cair",
-        "description": "Melakukan demonstrasi langsung pembuatan pupuk organik cair memanfaatkan limbah rumah tangga bersama ibu-ibu PKK.",
-        "attendance": ["SI", "AN"],
-        "moreAttendance": 0,
-        "gallery": ["assets/images/gallery-1.jpg", "assets/images/gallery-2.jpg"]
-    }
+  {
+    "id": 1,
+    "date": "2026-07-15",
+    "day": "Pra-KKN",
+    "category": "Rapat",
+    "title": "Pertemuan Perdana (Daring)",
+    "description": "Pertemuan pertama kali walau masih via layar. Agendanya perkenalan awal sekaligus menyusun struktur organisasi dan pembagian tugas tiap bidang. Masih agak canggung, tapi semuanya semangat!"
+  },
+  {
+    "id": 2,
+    "date": "2026-07-17",
+    "day": "Pra-KKN",
+    "category": "Rapat",
+    "title": "Wejangan DPL & Diskusi Perpus",
+    "description": "Akhirnya kumpul luring! Pagi bertemu DPL untuk mendapat wejangan dan pemaparan KKN. Setelahnya, kami lanjut diskusi ngemper di perpustakaan kampus. Membahas hal krusial: besaran iuran, tanggal survei, penyesuaian organisasi, sampai *deal-dealan* patungan sewa mobil pick-up untuk angkut barang."
+  },
+  {
+    "id": 3,
+    "date": "2026-07-20",
+    "day": "Pra-KKN",
+    "category": "Rapat",
+    "title": "Bonding Anggota Luring",
+    "description": "Pertemuan kedua secara luring. Fokus hari ini murni untuk saling mengenal lebih jauh anggota yang bisa hadir agar saat di posko nanti komunikasi sudah cair dan tidak kaku."
+  },
+  {
+    "id": 4,
+    "date": "2026-07-21",
+    "day": "Pra-KKN",
+    "category": "Survei",
+    "title": "Survei Perdana: Cek Akses",
+    "description": "Survei awal tipis-tipis. Kami mengecek seberapa ekstrem medan jalan menuju Desa Sulek, sekaligus mencari kontak katering dan mengumpulkan kontak perangkat desa untuk komunikasi lanjutan."
+  },
+  {
+    "id": 5,
+    "date": "2026-07-22",
+    "day": "Pra-KKN",
+    "category": "Rapat",
+    "title": "Persiapan Survei Lanjutan",
+    "description": "Rapat daring malam hari untuk mematangkan rencana survei posko. Menentukan siapa saja tim advance yang berangkat, kapan waktunya, dan poin-poin apa saja yang harus ditanyakan ke warga."
+  },
+  {
+    "id": 6,
+    "date": "2026-07-23",
+    "day": "Pra-KKN",
+    "category": "Survei",
+    "title": "Deal Posko & Sowan Desa",
+    "description": "Survei posko! Kami sepakat membagi area posko dengan teman-teman KKN dari Universitas Bondowoso. Setelah urusan tempat tidur aman, kami sowan ke Ketua BPD dan Bendahara Desa untuk merencanakan pertemuan dengan Pak Kades dan pihak Gapoktan."
+  },
+  {
+    "id": 7,
+    "date": "2026-07-24",
+    "day": "Pra-KKN",
+    "category": "Survei",
+    "title": "Gali Potensi bersama Kades & Gapoktan",
+    "description": "Hari yang padat. Pagi hari berdiskusi dengan Pak Kades mengenai potensi dan program yang sedang berjalan di Sulek. Sorenya, lanjut diskusi seru dengan Ketua Gapoktan membahas komoditas demplot di lahan desa. Gambaran proker mulai terlihat jelas!"
+  },
+  {
+    "id": 8,
+    "date": "2026-07-25",
+    "day": "Pra-KKN",
+    "category": "Rapat",
+    "title": "Rapat Akbar Finalisasi",
+    "description": "Kumpul luring dengan formasi penuh! Kami membedah semua temuan dari hasil survei kemarin, merancang draf proker, dan akhirnya mengetok palu finalisasi struktur organisasi kelompok."
+  },
+  {
+    "id": 9,
+    "date": "2026-07-26",
+    "day": "Pra-KKN",
+    "category": "Administrasi",
+    "title": "Ngebut Proposal Proker",
+    "description": "Karena jadwal semakin dekat, hari ini kami fokus menyusun dokumen. Memecah proker menjadi proker utama, pendukung, dan divisi, sekaligus mengebut penulisan proposal. Masih on-progress!"
+  }
 ]
