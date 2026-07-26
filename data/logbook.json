@@ -12,7 +12,12 @@
         "description": "Pertemuan pertama kali walau masih via layar. Agendanya perkenalan awal sekaligus menyusun struktur organisasi dan pembagian tugas tiap bidang. Masih agak canggung, tapi semuanya semangat!",
         "attendance": ["ALL"],
         "moreAttendance": 0,
-        "gallery": []
+        
+        "notulensi": "Hasil Rapat:\n1. Dika terpilih jadi korwil.\n2. Pembagia divisi selesai.",
+        "video": "",
+        "gallery": [
+            "../assets/images/gallery-1.webp"
+        ]
     },
     {
         "id": 2,
