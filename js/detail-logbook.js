@@ -1,48 +1,57 @@
 // js/detail-logbook.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Tangkap ID dari URL (contoh: detail-logbook.html?id=2)
+    // 1. Tangkap ID dari URL
     const urlParams = new URLSearchParams(window.location.search);
     const logId = urlParams.get('id');
 
     if (!logId) {
         document.getElementById('detail-title').innerText = "Data tidak ditemukan!";
         document.getElementById('detail-desc').innerText = "Silakan kembali ke halaman Logbook.";
-        return; // Hentikan proses jika tidak ada ID
+        return;
     }
 
     // 2. Ambil data dari JSON
     fetch('../data/logbook.json')
         .then(response => response.json())
         .then(data => {
-            // 3. Cari data yang ID-nya cocok dengan logId di URL
+            // 3. Cari data yang ID-nya cocok
             const item = data.find(log => log.id == logId);
 
             if (item) {
-                // 4. Masukkan data ke dalam HTML
+                // 4. Masukkan data ke dalam HTML dengan desain yang disamakan
                 document.getElementById('detail-title').innerText = item.title;
-                document.getElementById('detail-date').innerText = `🕒 ${item.date.day} ${item.date.month} - ${item.date.time}`;
-                document.getElementById('detail-location').innerText = `📍 ${item.location}`;
-                document.getElementById('detail-desc').innerText = item.description;
                 
-                // Urusan Kehadiran
-                const hadir = item.attendance.join(', ');
-                const tambahan = item.moreAttendance > 0 ? ` (+${item.moreAttendance} orang lainnya)` : '';
-                document.getElementById('detail-attendance').innerText = `${hadir}${tambahan}`;
+                // Pasang Ikon Lucide untuk Waktu & Lokasi
+                document.getElementById('detail-date').innerHTML = `<i data-lucide="clock" style="width:18px; height:18px;"></i> ${item.date.day} ${item.date.month} - ${item.date.time}`;
+                document.getElementById('detail-location').innerHTML = `<i data-lucide="map-pin" style="width:18px; height:18px;"></i> ${item.location}`;
+                
+                document.getElementById('detail-desc').innerText = item.description;
 
-                // Urusan Tags (Label)
-                const tagsContainer = document.getElementById('detail-tags');
-                tagsContainer.innerHTML = ''; // Bersihkan dulu
-                item.tags.forEach(tag => {
-                    const span = document.createElement('span');
-                    span.innerText = tag;
-                    span.style.background = '#e0f2e9'; // Warna hijau muda
-                    span.style.color = '#155d3a';
-                    span.style.padding = '4px 12px';
-                    span.style.borderRadius = '20px';
-                    span.style.fontSize = '0.85rem';
-                    tagsContainer.appendChild(span);
-                });
+                // Urusan Kehadiran (Diubah menjadi Avatar Group melingkar)
+                const avatarsHTML = item.attendance ? item.attendance.map(name => 
+                    `<div class="avatar" title="${name}">${name}</div>`
+                ).join('') : '';
+                const moreAvatar = item.moreAttendance > 0 ? `<div class="avatar-more">+${item.moreAttendance}</div>` : '';
+                
+                document.getElementById('detail-attendance').innerHTML = `
+                    <div class="avatar-group">
+                        ${avatarsHTML}
+                        ${moreAvatar}
+                    </div>
+                `;
+
+                // Urusan Tags (Diubah menggunakan class tag-primary & tag-secondary)
+                const tagsHTML = item.tags ? item.tags.map((tag, i) => 
+                    `<span class="${i === 0 ? 'tag-primary' : 'tag-secondary'}">${tag}</span>`
+                ).join('') : '';
+                document.getElementById('detail-tags').innerHTML = tagsHTML;
+
+                // 5. Wajib panggil ulang Lucide agar ikon yang baru di-inject via JS bisa muncul!
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+
             } else {
                 document.getElementById('detail-title').innerText = "Kegiatan tidak ditemukan!";
             }
