@@ -1,10 +1,7 @@
-// js/logbook.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const logbookContainer = document.getElementById('logbook-container');
     if (!logbookContainer) return;
 
-    // Ambil data dari JSON
     fetch('../data/logbook.json')
         .then(response => response.json())
         .then(data => {
@@ -13,29 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching logbook data:', error));
 
     function renderLogbook(logs) {
-        logbookContainer.innerHTML = ''; // Bersihkan kontainer
+        logbookContainer.innerHTML = ''; 
 
         logs.forEach((log, index) => {
-            // Logika untuk menampilkan gambar jika ada
             let galleryHTML = '';
             if (log.gallery.length > 0) {
                 const images = log.gallery.map(img => `<img src="${img}" alt="Dokumentasi">`).join('');
                 galleryHTML = `<div class="mini-gallery">${images}</div>`;
             }
 
-            // Logika untuk tags
             const tagsHTML = log.tags.map((tag, i) => 
                 `<span class="${i === 0 ? 'tag-primary' : 'tag-secondary'}">${tag}</span>`
             ).join('');
 
-            // Logika untuk avatar (peserta)
             const avatarsHTML = log.attendance.map(name => 
                 `<div class="avatar" title="${name}">${name}</div>`
             ).join('');
             
             const moreAvatar = log.moreAttendance > 0 ? `<div class="avatar-more">+${log.moreAttendance}</div>` : '';
 
-            // Rakit HTML-nya
             const logHTML = `
                 <div class="logbook-item reveal-fade-up active">
                     <div class="logbook-time">
@@ -69,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${galleryHTML}
 
                         <div class="card-footer">
-                            <button class="btn btn-outline btn-sm">Lihat Selengkapnya</button>
+                            <a href="detail-logbook.html?id=${item.id}" class="btn btn-outline btn-sm" style="text-decoration: none; text-align: center; display: inline-block;">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             logbookContainer.innerHTML += logHTML;
         });
 
-        // Re-inisialisasi ikon Lucide untuk elemen yang baru dirender
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
