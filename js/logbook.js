@@ -34,8 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="color: #555; margin-bottom: 16px; line-height: 1.5;">${item.description}</p>
                     
                     <div class="card-footer">
-                        <!-- INI TOMBOL YANG SUDAH DIPERBAIKI -->
-                        <a href="detail-logbook.html?id=${item.id}" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-block;">Lihat Selengkapnya</a>
+                        <a href="detail-logbook.html?id=${log.id}" class="btn btn-outline btn-sm" style="text-decoration: none; display: inline-block;">Lihat Selengkapnya</a>
                     </div>
                 </div>
             `;
@@ -43,16 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const btnFilter = document.getElementById('btn-apply-filter');
     if (btnFilter) {
         btnFilter.addEventListener('click', () => {
-            const kategoriPilihan = document.getElementById('filter-kategori').value; 
+            const dropdown = document.getElementById('filter-kategori');
+            if (!dropdown) return;
+
+            const kategoriPilihan = dropdown.value;
             
-            if (kategoriPilihan === "Semua" || kategoriPilihan === "Semua Kategori") {
-                renderLogbook(allData);
-            } else {
-                const filteredData = allData.filter(item => item.tags.includes(kategoriPilihan));
-                renderLogbook(filteredData);
-            }
+            fetch('../data/logbook.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (kategoriPilihan === "Semua" || kategoriPilihan === "Semua Kategori") {
+                        renderLogbook(data);
+                    } else {
+                        const filteredData = data.filter(log => log.tags.includes(kategoriPilihan));
+                        renderLogbook(filteredData);
+                    }
+                });
         });
     }
 });
