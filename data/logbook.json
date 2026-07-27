@@ -32,7 +32,12 @@
         "description": "Akhirnya kumpul luring! Pagi bertemu DPL untuk mendapat wejangan dan pemaparan KKN. Setelahnya, kami lanjut diskusi ngemper di perpustakaan kampus. Membahas hal krusial: besaran iuran, tanggal survei, penyesuaian organisasi, sampai deal-dealan patungan sewa mobil pick-up.",
         "attendance": ["SD", "FR", "AN"],
         "moreAttendance": 8,
-        "gallery": []
+        
+        "notulensi": "Hasil Rapat:\n1. Dika terpilih jadi korwil.\n2. Pembagia divisi selesai.",
+        "video": "",
+        "gallery": [
+            "../assets/images/gallery-2.webp"
+        ]
     },
     {
         "id": 3,
